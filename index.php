@@ -8,5 +8,14 @@ create un file index.php in cui:
 - vengono istanziati almeno due oggetti Movie e stampati a schermo i valori delle relative proprietà
 */
 
+class Movie {
+    //variabili d'istanza
+    public $name;
+    public $cast;
+    public $year;
+}
+
+$movie1 = new Movie();
+var_dump($movie1)
 
 ?>
