@@ -1,9 +1,6 @@
 <?php
-/*
-
-Bonus 2:
-Creare una classe Actor e modificare la classe Movie in modo che accetti piú di un attore
-
+require_once __DIR__ . '/Movie.php';
+require_once __DIR__ . '/movies.php';
 
 class Actor {
     //instance variables
@@ -17,13 +14,14 @@ class Actor {
         $this->last_name = $last_name;
         $this->age = $age;
     }
+} 
 
-    public function toArray() : array {
-        return [
-            "firstname" => $this->firt_name,
-            "lastname" => $this->last_name,
-        ];
-    }
-} */
+$actor1 = new Actor('Daniel', 'Radcliffe', 34);
+$actor2 = new Actor('Emma', 'Watson', 33);
+$actor3 = new Actor('Rupert', 'Grint', 35);
+
+$actors = [$actor1, $actor2, $actor3];
+
+var_dump($actors);
 
 ?>
