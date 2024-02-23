@@ -28,7 +28,7 @@ class Movie {
     }
 
     public function getNameYear(){
-        return  ' ' . 'è uscito nelle grandi sale nel' . ' ' . $this->year;
+        return  ' ' . 'è uscito nelle grandi sale nel' . ' ' . $this->year . '. ';
     }
 };
 
