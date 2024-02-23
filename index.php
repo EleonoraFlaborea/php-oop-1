@@ -1,12 +1,7 @@
 <?php
 /*
-create un file index.php in cui:
- - è definita una classe Movie
-   => all'interno della classe sono dichiarate delle variabili d'istanza
-   => all'interno della classe è definito un costruttore
-
-   => all'interno della classe è definito almeno un metodo
-- vengono istanziati almeno due oggetti Movie e stampati a schermo i valori delle relative proprietà
+Bonus 2:
+Creare una classe Actor e modificare la classe Movie in modo che accetti piú di un attore
 */
 
 class Movie {
@@ -14,14 +9,17 @@ class Movie {
     public $name;
     public $characters;
     public $year;
+    public $director;
+
     //construction
-    public function __construct($name, $characters, $year){
+    public function __construct($name, $characters, $year, Director $director){
         $this->name = $name;
         $this->characters = $characters;
         $this->year = $year;
-
+        $this->director = $director;
     }
-    //method
+
+    //methods
     public function introduce(){
         echo 'Il film' . ' ' . $this->name . $this->getNameYear();
     }
@@ -29,10 +27,26 @@ class Movie {
     public function getNameYear(){
         return  ' ' . 'è uscito nelle grandi sale nel' . ' ' . $this->year;
     }
-
 }
 
-$movie1 = new Movie('Harry Potter e la pietra filosofale','Harry, Ron, Hermione...', 2001);
+//composition
+class Director {
+    //instance variables
+    public $first_name;
+    public $last_name;
+    public $age;
+
+    //construction
+    public function __construct($first_name, $last_name, $age){
+        $this->first_name = $first_name;
+        $this->last_name = $last_name;
+        $this->age = $age;
+    }
+}
+
+$movie1 = new Movie('Harry Potter e la pietra filosofale','Harry, Ron, Hermione...', 2001, new Director('Chris Joseph', 'Columbus', 65));
+
+
 
 var_dump($movie1);
 
