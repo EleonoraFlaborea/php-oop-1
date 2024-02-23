@@ -4,6 +4,7 @@ create un file index.php in cui:
  - è definita una classe Movie
    => all'interno della classe sono dichiarate delle variabili d'istanza
    => all'interno della classe è definito un costruttore
+
    => all'interno della classe è definito almeno un metodo
 - vengono istanziati almeno due oggetti Movie e stampati a schermo i valori delle relative proprietà
 */
@@ -20,10 +21,22 @@ class Movie {
         $this->year = $year;
 
     }
+    //method
+    public function introduce(){
+        echo 'Il film' . ' ' . $this->name . $this->getNameYear();
+    }
+
+    public function getNameYear(){
+        return  ' ' . 'è uscito nelle grandi sale nel' . ' ' . $this->year;
+    }
+
 }
 
 $movie1 = new Movie('Harry Potter e la pietra filosofale','Harry, Ron, Hermione...', 2001);
 
-var_dump($movie1)
+var_dump($movie1);
+
+$movie1->introduce();
+
 
 ?>
